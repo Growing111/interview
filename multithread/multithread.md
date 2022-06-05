@@ -1,6 +1,6 @@
 <h2>多线程</h2>
 
-<h4>CyclicBarrier 和 CountDownLatch 的区别</h4>
+<h3>CyclicBarrier 和 CountDownLatch 的区别</h3>
 + CountDownLatch 简单的说就是一个线程等待，直到他所等待的其他线程都执行完成并
     且调用 countDown()方法发出通知后，当前线程才可以继续执行。
 + cyclicBarrier 是所有线程都进行等待，直到所有线程都准备好进入 await()方法之后，
