@@ -1,6 +1,6 @@
 <h1>多线程</h1>
 
-<h3>CyclicBarrier 和 CountDownLatch 的区别</h3>
+### CyclicBarrier 和 CountDownLatch 的区别
 
 + CountDownLatch 简单的说就是一个线程等待，直到他所等待的其他线程都执行完成并
     且调用 countDown()方法发出通知后，当前线程才可以继续执行。
@@ -13,11 +13,11 @@
     CyclicBarrier 阻塞的线程数量。isBroken 方法用来知道阻塞的线程是否被中断。如果被中断
     返回 true，否则返回 false。
 
-<h3>Semaphore</h3>
+### Semaphore
 
 + Semaphore 类似于操作系统中的信号量，可以控制对互斥资源的访问线程数。
 
-<h3>内存模型的三大特性</h3>
+### 内存模型的三大特性
 
 + 原子性： Java 内存模型保证了 read、load、use、assign、store、write、lock 和 unlock 操作具有原子性，例如对一个 int 类型的变量执行 assign 赋值操作，这个操作就是原子性的
 + 可见性：可见性指当一个线程修改了共享变量的值，其它线程能够立即得知这个修改。Java 内存模型是通过在变量修改后将新值同步回主内存，在变量读取前从主内存刷新变量值来实现可见性的。
@@ -32,9 +32,9 @@
    + 也可以通过 synchronized 来保证有序性，它保证每个时刻只有一个线程执行同步代码，相当于是让线程顺序执行同步代码
 
 
-<h3>CAS</h3>
+### CAS
 + 乐观锁需要操作和冲突检测这两个步骤具备原子性，这里就不能再使用互斥同步来保证了，只能靠硬件来完成。硬件支持的原子性操作最典型的是：比较并交换（Compare-and-Swap，CAS）。CAS 指令需要有 3 个操作数，分别是内存地址 V、旧的预期值 A 和新值 B。当执行操作时，只有当 V 的值等于 A，才将 V 的值更新为 B
 
-<h3>ThreadLocal</h3>
+### ThreadLocal
 
 <hr>
