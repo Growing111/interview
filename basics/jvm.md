@@ -2,7 +2,7 @@
 
 <h3>jvm的运行时内存模型</h3>
 
-![jvm核心模块](/src/main/resources/img-storage/jvm01.png)
+![jvm核心模块](src/main/resources/img-storage/jvm01.png)
 
 + 程序计数器： 存储当前线程所执行的字节码的行号指示器，用于cpu时间片轮换，记录之前运行到哪一步了
 + 方法区：用于保存已被虚拟机加载的类信息(类的版本，字段，方法，接口和父类信息)，运行时常量信息（static，final修饰的常量和字符串常量信息）  
@@ -13,7 +13,7 @@
 
 <h3>类加载过程</h3>
 
-![类加载过程](/src/main/resources/img-storage/class load.png)
+![类加载过程](src/main/resources/img-storage/class load.png)
 
   将class文件放至内存中，通过对数据进行校验，转换，解析和初始化，形成可以被虚拟机使用的class类对象
 + 装载：将class文件中的信息读取到内存中
@@ -25,7 +25,7 @@
 
 <h3>类加载器</h3>
 
-![双亲委派过程](/src/main/resources/img-storage/sqwp.png)
+![双亲委派过程](src/main/resources/img-storage/sqwp.png)
 JVM的类加载的过程是通过引导类加载器（bootstrap classloader）创建一个初始类（initial class）来完成
 + 双亲委派模型
   + 1.在类加载的时候，系统会首先判断当前类是否被加载过。已经被加载的类会直接返回，否则才会尝试加载。
@@ -73,7 +73,7 @@ JVM的类加载的过程是通过引导类加载器（bootstrap classloader）�
   只需要付出少量存活对象的复制成本就可以完成收集；老年代中因为对象的存活率极高，没有额外的空间对他进行分配担保，所以采用标记清理或者标记整理算法进行回收；
 
 对比: 
-![垃圾回收对比](/src/main/resources/img-storage/ljhssf.png)
+![垃圾回收对比](src/main/resources/img-storage/ljhssf.png)
 
 <h3>垃圾回收器</h3>
 
@@ -86,7 +86,7 @@ JVM的类加载的过程是通过引导类加载器（bootstrap classloader）�
 + CMS:是一种以获得最短回收停顿时间为目标的收集器，标记清除算法，运作过程：初始标记，并发标记，重新标记，并发清除，收集结束会产生大量空间碎片； 
 + G1:标记整理算法实现，运作流程主要包括以下：初始标记，并发标记，最终标记，筛选回收。不会产生空间碎片，可以精确地控制停顿；G1将整个堆分为大小相等的多个Region（区域），G1跟踪每个区域的垃圾大小，在后台维护一个优先级列表，每次根据允许的收集时间，优先回收价值最大的区域，已达到在有限时间内获取尽可能高的回收效率
 
-![垃圾回收器](/src/main/resources/img-storage/ljhssf.png)
+![垃圾回收器](src/main/resources/img-storage/ljhssf.png)
 
 <h3>CMS垃圾回收过程</h3>
 
