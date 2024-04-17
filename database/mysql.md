@@ -111,7 +111,7 @@ MySQL 在可重复读级别解决了幻读问题，是通过行锁和间隙锁�
 ### 覆盖索引
 
 + 比如 存在一个唯一索引 code  
-select name from student where code like "%张%";
+select code from student where code like "%张%";
 这种情况是走了索引查询，这就是一种覆盖索引的情况；
 
 + 1.覆盖索引是一种数据查询方式，不是索引类型
