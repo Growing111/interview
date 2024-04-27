@@ -79,6 +79,21 @@ public static void main(String[] args) {
     mt.start();
 }
 ```
+### 线程如何终止
+
++ stop()方法  不推荐 ,因为会它会直接终止线程的执行，导致线程没有机会去清理资源，可能会造成运行结果不正确
+  ```
+  MyThread mt = new MyThread();
+  mt.start();
+  mt.stop();
+  ```
+
++ interrupt()方法
+ interrupt()方法可以设置线程为中断状态，但这并不是强制中断线程。它主要是通知线程可以停止了，是否真的停止取决于线程本身的判断。例如，可以调用t1.interrupt();来设置线程状态为中断状态，然后在线程中检查中断状态并决定是否停止。
+
++ 使用退出标志：
+  在线程的run方法中定义一个boolean型的标志位，根据这个标志位是为true还是为false来判断是否终止。这种情况多用于while循环中。例如，可以定义一个标志位private static volatile boolean flag = true;，在线程的run方法中检查这个标志位，如果为false，则退出循环，线程终止。()
+
 ### java线程池
 > 说明：使用线程就要注意cpu和内存的使用和释放，一般推荐是用线程池的方式来使用线程
 
